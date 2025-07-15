@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.7px Arial; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;title&gt;Random Street View Explorer&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;!-- Tailwind CSS CDN --&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;style&gt;</span></p>
+<p class="p1"><span class="s1">        /* Custom styles for the Inter font and basic body setup */</span></p>
+<p class="p1"><span class="s1">        body {</span></p>
+<p class="p1"><span class="s1">            font-family: 'Inter', sans-serif;</span></p>
+<p class="p1"><span class="s1">            display: flex;</span></p>
+<p class="p1"><span class="s1">            flex-direction: column; /* Changed to column to stack main content and footer */</span></p>
+<p class="p1"><span class="s1">            justify-content: center;</span></p>
+<p class="p1"><span class="s1">            align-items: center;</span></p>
+<p class="p1"><span class="s1">            min-height: 100vh;</span></p>
+<p class="p1"><span class="s1">            background-color: #f0f4f8; /* Light gray background */</span></p>
+<p class="p1"><span class="s1">            margin: 0;</span></p>
+<p class="p1"><span class="s1">            padding: 20px;</span></p>
+<p class="p1"><span class="s1">            box-sizing: border-box;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .container {</span></p>
+<p class="p1"><span class="s1">            max-width: 500px;</span></p>
+<p class="p1"><span class="s1">            width: 100%;</span></p>
+<p class="p1"><span class="s1">            padding: 30px;</span></p>
+<p class="p1"><span class="s1">            background-color: #ffffff;</span></p>
+<p class="p1"><span class="s1">            border-radius: 15px;</span></p>
+<p class="p1"><span class="s1">            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);</span></p>
+<p class="p1"><span class="s1">            text-align: center;</span></p>
+<p class="p1"><span class="s1">            display: flex;</span></p>
+<p class="p1"><span class="s1">            flex-direction: column;</span></p>
+<p class="p1"><span class="s1">            align-items: center;</span></p>
+<p class="p1"><span class="s1">            gap: 20px;</span></p>
+<p class="p1"><span class="s1">            margin-bottom: 20px; /* Add some space between container and footer */</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .message-box {</span></p>
+<p class="p1"><span class="s1">            padding: 12px 20px;</span></p>
+<p class="p1"><span class="s1">            border-radius: 8px;</span></p>
+<p class="p1"><span class="s1">            font-size: 0.95rem;</span></p>
+<p class="p1"><span class="s1">            width: 100%;</span></p>
+<p class="p1"><span class="s1">            box-sizing: border-box;</span></p>
+<p class="p1"><span class="s1">            word-wrap: break-word;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .message-box.info {</span></p>
+<p class="p1"><span class="s1">            background-color: #e0f2fe; /* Light blue */</span></p>
+<p class="p1"><span class="s1">            color: #0284c7; /* Darker blue */</span></p>
+<p class="p1"><span class="s1">            border: 1px solid #7dd3fc;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .message-box.error {</span></p>
+<p class="p1"><span class="s1">            background-color: #fee2e2; /* Light red */</span></p>
+<p class="p1"><span class="s1">            color: #dc2626; /* Darker red */</span></p>
+<p class="p1"><span class="s1">            border: 1px solid #fca5a5;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .message-box a {</span></p>
+<p class="p1"><span class="s1">            color: #2563eb; /* Blue for links */</span></p>
+<p class="p1"><span class="s1">            text-decoration: underline;</span></p>
+<p class="p1"><span class="s1">            font-weight: 500;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .message-box a:hover {</span></p>
+<p class="p1"><span class="s1">            color: #1d4ed8; /* Darker blue on hover */</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .bottom-info {</span></p>
+<p class="p1"><span class="s1">            width: 100%;</span></p>
+<p class="p1"><span class="s1">            max-width: 500px; /* Align with container width */</span></p>
+<p class="p1"><span class="s1">            text-align: center;</span></p>
+<p class="p1"><span class="s1">            padding: 10px 0;</span></p>
+<p class="p1"><span class="s1">            margin-top: 20px; /* Space from the main container */</span></p>
+<p class="p1"><span class="s1">            font-size: 0.875rem; /* text-sm */</span></p>
+<p class="p1"><span class="s1">            color: #6b7280; /* text-gray-500 */</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .gemini-credit {</span></p>
+<p class="p1"><span class="s1">            width: 100%;</span></p>
+<p class="p1"><span class="s1">            max-width: 500px; /* Align with container width */</span></p>
+<p class="p1"><span class="s1">            text-align: center;</span></p>
+<p class="p1"><span class="s1">            padding: 5px 0;</span></p>
+<p class="p1"><span class="s1">            margin-top: 10px; /* Space between Jeremy World info and self-credit */</span></p>
+<p class="p1"><span class="s1">            font-size: 0.65rem; /* Very very fine print */</span></p>
+<p class="p1"><span class="s1">            color: #d1d5db; /* Very very faint color (light gray) */</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">    &lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;div class="container"&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;h1 class="text-3xl font-bold text-gray-800 mb-4"&gt;Explore the World!&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;p class="text-gray-600 mb-6"&gt;Click the button below to find a random Google Street View location. You will then be provided with a link to copy and paste.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        &lt;button id="exploreButton"</span></p>
+<p class="p1"><span class="s1">                class="px-8 py-4 bg-blue-600 text-white font-semibold rounded-full shadow-lg</span></p>
+<p class="p1"><span class="s1">                       hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300</span></p>
+<p class="p1"><span class="s1">                       transition duration-300 ease-in-out transform hover:scale-105"&gt;</span></p>
+<p class="p1"><span class="s1">            Take me somewhere!</span></p>
+<p class="p1"><span class="s1">        &lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        &lt;div id="loadingIndicator" class="hidden text-blue-600 font-medium mt-4"&gt;</span></p>
+<p class="p1"><span class="s1">            Searching for Street View...</span></p>
+<p class="p1"><span class="s1">        &lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        &lt;div id="messageBox" class="message-box hidden"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    &lt;!-- Jeremy World Information --&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;div class="bottom-info"&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;p&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;p&gt;Jeremy World: &lt;a href="https://jeremyworld.org" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"&gt;jeremyworld.org&lt;/a&gt; | &lt;a href="mailto:streetview@jeremyworld.org" class="text-blue-600 hover:text-blue-800"&gt;streetview@jeremyworld.org&lt;/a&gt; | &lt;a href="https://donate.jeremyworld.org" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"&gt;Donate&lt;/a&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    &lt;!-- Gemini AI Credit --&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;div class="gemini-credit"&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;p&gt;Powered by Gemini.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    &lt;script&gt;</span></p>
+<p class="p1"><span class="s1">        // Get references to DOM elements</span></p>
+<p class="p1"><span class="s1">        const exploreButton = document.getElementById('exploreButton');</span></p>
+<p class="p1"><span class="s1">        const loadingIndicator = document.getElementById('loadingIndicator');</span></p>
+<p class="p1"><span class="s1">        const messageBox = document.getElementById('messageBox');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        // Google Maps API Loader (from the Stack Overflow example)</span></p>
+<p class="p1"><span class="s1">        // Note: For actual deployment, you would need a valid Google Maps API key.</span></p>
+<p class="p1"><span class="s1">        // For Canvas environment, the API key is handled automatically.</span></p>
+<p class="p1"><span class="s1">        const googleMapsApiKey = ""; // Leave empty for Canvas environment</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        /**</span></p>
+<p class="p1"><span class="s1">         * Displays a message in the message box.</span></p>
+<p class="p1"><span class="s1">         * @param {string} message - The message to display.</span></p>
+<p class="p1"><span class="s1">         * @param {string} type - The type of message ('info' or 'error').</span></p>
+<p class="p1"><span class="s1">         */</span></p>
+<p class="p1"><span class="s1">        function showMessage(message, type) {</span></p>
+<p class="p1"><span class="s1">            messageBox.textContent = message;</span></p>
+<p class="p1"><span class="s1">            messageBox.className = `message-box ${type}`; // Apply base and type-specific classes</span></p>
+<p class="p1"><span class="s1">            messageBox.classList.remove('hidden'); // Make sure it's visible</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        /**</span></p>
+<p class="p1"><span class="s1">         * Clears and hides the message box.</span></p>
+<p class="p1"><span class="s1">         */</span></p>
+<p class="p1"><span class="s1">        function clearMessage() {</span></p>
+<p class="p1"><span class="s1">            messageBox.innerHTML = ''; // Clear inner HTML as well</span></p>
+<p class="p1"><span class="s1">            messageBox.classList.add('hidden');</span></p>
+<p class="p1"><span class="s1">            messageBox.classList.remove('info', 'error'); // Remove type-specific classes</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        /**</span></p>
+<p class="p1"><span class="s1">         * Generates a random latitude within a more land-centric range.</span></p>
+<p class="p1"><span class="s1">         * @returns {number} Random latitude.</span></p>
+<p class="p1"><span class="s1">         */</span></p>
+<p class="p1"><span class="s1">        function getRandomLatitude() {</span></p>
+<p class="p1"><span class="s1">            // Limiting latitude to a range with more land coverage (e.g., -50 to 70 degrees)</span></p>
+<p class="p1"><span class="s1">            // This avoids most of the Antarctic, Arctic, and vast ocean areas.</span></p>
+<p class="p1"><span class="s1">            const minLat = -50;</span></p>
+<p class="p1"><span class="s1">            const maxLat = 70;</span></p>
+<p class="p1"><span class="s1">            return Math.random() * (maxLat - minLat) + minLat;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        /**</span></p>
+<p class="p1"><span class="s1">         * Generates a random longitude within the full range (-180 to 180).</span></p>
+<p class="p1"><span class="s1">         * @returns {number} Random longitude.</span></p>
+<p class="p1"><span class="s1">         */</span></p>
+<p class="p1"><span class="s1">        function getRandomLongitude() {</span></p>
+<p class="p1"><span class="s1">            return Math.random() * 360 - 180; // Range from -180 to 180</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        /**</span></p>
+<p class="p1"><span class="s1">         * Loads the Google Maps Street View library and attempts to find a panorama.</span></p>
+<p class="p1"><span class="s1">         * @returns {Promise&lt;{lat: number, lng: number}|null&gt;} A promise that resolves with the panorama's coordinates or null if not found.</span></p>
+<p class="p1"><span class="s1">         */</span></p>
+<p class="p1"><span class="s1">        async function findPanoramaNearRandomLocation() {</span></p>
+<p class="p1"><span class="s1">            return new Promise(async (resolve) =&gt; {</span></p>
+<p class="p1"><span class="s1">                // Dynamically load the Google Maps API script if not already loaded</span></p>
+<p class="p1"><span class="s1">                if (typeof google === 'undefined' || typeof google.maps === 'undefined') {</span></p>
+<p class="p1"><span class="s1">                    const script = document.createElement('script');</span></p>
+<p class="p1"><span class="s1">                    script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&amp;libraries=streetView`;</span></p>
+<p class="p1"><span class="s1">                    script.async = true;</span></p>
+<p class="p1"><span class="s1">                    script.defer = true;</span></p>
+<p class="p1"><span class="s1">                    document.head.appendChild(script);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                    // Wait for the script to load and the global google.maps object to be available</span></p>
+<p class="p1"><span class="s1">                    await new Promise(res =&gt; script.onload = res);</span></p>
+<p class="p1"><span class="s1">                }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                const lat = getRandomLatitude();</span></p>
+<p class="p1"><span class="s1">                const lng = getRandomLongitude();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                // Create a StreetViewService instance</span></p>
+<p class="p1"><span class="s1">                const panoramaService = new google.maps.StreetViewService();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                // Attempt to find a panorama near the random location</span></p>
+<p class="p1"><span class="s1">                panoramaService.getPanorama({</span></p>
+<p class="p1"><span class="s1">                    location: { lat, lng },</span></p>
+<p class="p1"><span class="s1">                    preference: google.maps.StreetViewPreference.BEST, // Prioritize best available panorama</span></p>
+<p class="p1"><span class="s1">                    radius: 50000, // Search within a 50km radius</span></p>
+<p class="p1"><span class="s1">                    sources: [google.maps.StreetViewSource.OUTDOOR] // Only look for outdoor panoramas</span></p>
+<p class="p1"><span class="s1">                }, (data, status) =&gt; {</span></p>
+<p class="p1"><span class="s1">                    if (status === google.maps.StreetViewStatus.OK &amp;&amp; data &amp;&amp; data.location) {</span></p>
+<p class="p1"><span class="s1">                        // If a panorama is found, resolve with its coordinates</span></p>
+<p class="p1"><span class="s1">                        resolve({ lat: data.location.latLng.lat(), lng: data.location.latLng.lng() });</span></p>
+<p class="p1"><span class="s1">                    } else {</span></p>
+<p class="p1"><span class="s1">                        // If no panorama is found, resolve with null</span></p>
+<p class="p1"><span class="s1">                        console.log(`No Street View found near ${lat}, ${lng}. Status: ${status}`);</span></p>
+<p class="p1"><span class="s1">                        resolve(null);</span></p>
+<p class="p1"><span class="s1">                    }</span></p>
+<p class="p1"><span class="s1">                });</span></p>
+<p class="p1"><span class="s1">            });</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        /**</span></p>
+<p class="p1"><span class="s1">         * Handles the click event for the "Take me somewhere!" button.</span></p>
+<p class="p1"><span class="s1">         * Iteratively searches for a Street View panorama and displays a clickable link.</span></p>
+<p class="p1"><span class="s1">         */</span></p>
+<p class="p1"><span class="s1">        exploreButton.addEventListener('click', async () =&gt; {</span></p>
+<p class="p1"><span class="s1">            loadingIndicator.classList.remove('hidden'); // Show loading indicator</span></p>
+<p class="p1"><span class="s1">            exploreButton.disabled = true; // Disable button during loading</span></p>
+<p class="p1"><span class="s1">            clearMessage(); // Clear any previous messages</span></p>
+<p class="p1"><span class="s1">            showMessage('Searching for a Street View location, this might take a few tries...', 'info');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            let foundLocation = null;</span></p>
+<p class="p1"><span class="s1">            let attempts = 0;</span></p>
+<p class="p1"><span class="s1">            const maxAttempts = 50; // Increased attempts for better success rate</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            // Keep trying until a Street View location is found or max attempts are reached</span></p>
+<p class="p1"><span class="s1">            while (!foundLocation &amp;&amp; attempts &lt; maxAttempts) {</span></p>
+<p class="p1"><span class="s1">                attempts++;</span></p>
+<p class="p1"><span class="s1">                loadingIndicator.textContent = `Searching for Street View... (Attempt ${attempts}/${maxAttempts})`;</span></p>
+<p class="p1"><span class="s1">                foundLocation = await findPanoramaNearRandomLocation();</span></p>
+<p class="p1"><span class="s1">                if (!foundLocation) {</span></p>
+<p class="p1"><span class="s1">                    // Small delay before next attempt to avoid hammering the API too quickly</span></p>
+<p class="p1"><span class="s1">                    await new Promise(resolve =&gt; setTimeout(resolve, 200));</span></p>
+<p class="p1"><span class="s1">                }</span></p>
+<p class="p1"><span class="s1">            }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            if (foundLocation) {</span></p>
+<p class="p1"><span class="s1">                // Construct the Google Maps Street View URL</span></p>
+<p class="p1"><span class="s1">                const googleStreetViewUrl = `https://www.google.com/maps/@?api=1&amp;map_action=pano&amp;viewpoint=${foundLocation.lat},${foundLocation.lng}`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                // Display the link and a copy button instead of opening directly</span></p>
+<p class="p1"><span class="s1">                messageBox.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1">                messageBox.classList.add('info'); // Use info style for the message box</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                messageBox.innerHTML = `</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="mb-2"&gt;Street View location found! Please copy the link below and paste it into a new tab:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;input type="text" value="${googleStreetViewUrl}" readonly</span></p>
+<p class="p1"><span class="s1">                           class="w-full p-2 border border-gray-300 rounded-md text-sm mb-3 font-mono bg-gray-50 focus:outline-none focus:ring-1 focus:ring-blue-500"&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;button id="copyLinkButton"</span></p>
+<p class="p1"><span class="s1">                            class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow-sm</span></p>
+<p class="p1"><span class="s1">                                   hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400</span></p>
+<p class="p1"><span class="s1">                                   transition duration-200 ease-in-out"&gt;</span></p>
+<p class="p1"><span class="s1">                        Copy Link</span></p>
+<p class="p1"><span class="s1">                    &lt;/button&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;div id="copyStatus" class="text-xs mt-2 text-green-700 hidden"&gt;Copied!&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                `;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                const copyLinkButton = document.getElementById('copyLinkButton');</span></p>
+<p class="p1"><span class="s1">                const urlInput = messageBox.querySelector('input[type="text"]');</span></p>
+<p class="p1"><span class="s1">                const copyStatus = document.getElementById('copyStatus');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                // Add event listener for the copy button</span></p>
+<p class="p1"><span class="s1">                copyLinkButton.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1">                    urlInput.select(); // Select the text in the input field</span></p>
+<p class="p1"><span class="s1">                    urlInput.setSelectionRange(0, 99999); // For mobile devices</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                    try {</span></p>
+<p class="p1"><span class="s1">                        // Attempt to copy the selected text to the clipboard</span></p>
+<p class="p1"><span class="s1">                        document.execCommand('copy');</span></p>
+<p class="p1"><span class="s1">                        copyStatus.textContent = 'Copied!';</span></p>
+<p class="p1"><span class="s1">                        copyStatus.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1">                        copyStatus.classList.remove('text-red-700'); // Ensure it's green</span></p>
+<p class="p1"><span class="s1">                        copyStatus.classList.add('text-green-700');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">                        // Hide the "Copied!" message after a short delay</span></p>
+<p class="p1"><span class="s1">                        setTimeout(() =&gt; {</span></p>
+<p class="p1"><span class="s1">                            copyStatus.classList.add('hidden');</span></p>
+<p class="p1"><span class="s1">                        }, 2000);</span></p>
+<p class="p1"><span class="s1">                    } catch (err) {</span></p>
+<p class="p1"><span class="s1">                        console.error('Failed to copy text: ', err);</span></p>
+<p class="p1"><span class="s1">                        // Provide fallback message if copy fails</span></p>
+<p class="p1"><span class="s1">                        copyStatus.textContent = 'Failed to copy. Please copy manually.';</span></p>
+<p class="p1"><span class="s1">                        copyStatus.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1">                        copyStatus.classList.remove('text-green-700');</span></p>
+<p class="p1"><span class="s1">                        copyStatus.classList.add('text-red-700');</span></p>
+<p class="p1"><span class="s1">                    }</span></p>
+<p class="p1"><span class="s1">                });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            } else {</span></p>
+<p class="p1"><span class="s1">                showMessage(`Could not find a Street View location after ${maxAttempts} attempts. Please try again.`, 'error');</span></p>
+<p class="p1"><span class="s1">            }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            // Always hide the loading indicator and re-enable the button.</span></p>
+<p class="p1"><span class="s1">            loadingIndicator.classList.add('hidden');</span></p>
+<p class="p1"><span class="s1">            exploreButton.disabled = false;</span></p>
+<p class="p1"><span class="s1">        });</span></p>
+<p class="p1"><span class="s1">    &lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>
